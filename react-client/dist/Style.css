@@ -1,0 +1,10 @@
+th {
+  border: grey;
+  width:200px;
+}
+
+td {
+  border: grey;
+  width:200px;
+  text-align: center;
+}
