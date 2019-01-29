@@ -23,7 +23,7 @@ class Hand {
   getTotal() {
     var total = this.getHardTotal();
 
-    // if there's one A card, add 11
+    // if there's an Ace card, add 11 instead of 1 if total is < 11
     if (this.hasCardOfValue(1) && total <= 11) {
         total += 10;
     }
@@ -64,7 +64,7 @@ class Hand {
     return (this.cards[0].value == this.cards[1].value);
   }
 
-  // Double on any 2
+  // Doubleable on any 2
   isDoubleable() {
     if (this.cards.length != 2) {
       return false;
@@ -114,8 +114,14 @@ class Hand {
   }
 
   getTotalAmountForPlayer() {
-    if (this.status === constants.HAND_LOST) {
+    if (this.status === 'lost') {
       return 0;
+    }
+    if (this.status === 'push') {
+      return this.bet;
+    }
+    if (this.status === 'won_bj') {
+      return this.bet * 2.5;
     }
     return this.getTotalAmount();
   }

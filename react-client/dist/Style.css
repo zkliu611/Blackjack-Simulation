@@ -1,10 +1,14 @@
 th {
   border: grey;
-  width:200px;
+  width: 150px;
 }
 
 td {
   border: grey;
-  width:200px;
+  width: 150px;
   text-align: center;
+}
+
+label {
+  width: 200px;
 }

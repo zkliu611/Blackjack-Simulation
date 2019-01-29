@@ -1,26 +1,30 @@
 import React from 'react';
+import ResultsTableRows from './ResultsTableRows.jsx';
 
-const ResultsTable = () => {
-  return (
-    <div className="playerInput">
-      <table >
-        <tr>
-          <th>Model Name</th>
-          <th># of Games</th>
-          <th>Starting $</th> 
-          <th>Ending $</th>
-          <th>Net Gain/Loss</th>
-        </tr>
-        <tr>
-          <td>Rolling it</td>
-          <td>5000</td>
-          <td>$1000</td>
-          <td>$3000</td>
-          <td>$2000</td>
-        </tr>
-      </table>
-    </div>
-  )
+const ResultsTable = ({data}) => {
+  if (data) {
+    return (
+      <div className="playerInput">
+        <table >
+          <tr>
+            <th>Model Name</th>
+            <th># of Games</th>
+            <th>Playing Strategy</th>
+            <th>Betting Strategy</th>
+            <th>Starting Bankroll $</th> 
+            <th>Ending Bankroll $</th>
+            <th>Net Gain/Loss</th>
+          </tr>
+          {data.map((data) => <ResultsTableRows row={data}/>)}
+          {/* {videos.map((video) => <VideoListEntry key={video.etag}/>)} */}
+        </table>
+      </div>
+    )
+  } else {
+    return (
+      <div>loading data...</div>
+    )
+  }
 }
 
 export default ResultsTable;

@@ -16,7 +16,7 @@ class Deck {
               value = 10;
           }
         }
-        cards.push( new Card(value, this.names[n], this.suits[s]);
+        cards.push( new Card(value, this.names[n], this.suits[s]));
       }
     }
 
@@ -27,15 +27,6 @@ class Deck {
     return this.cards;
   }
 
-  getHashedHards() {
-    var hash = {};
-    for (let index = 0; index < this.cards.length; index++) {
-        const card = this.cards[index];
-        hash[card.key] = card;
-    }
-
-    return hash;
-  }
 }
 
 module.exports = Deck;
