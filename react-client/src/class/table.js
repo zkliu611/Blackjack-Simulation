@@ -1,7 +1,6 @@
 const Dealer = require('./players/dealer');
 const Shoe = require('./shoe');
 const Hand = require('./hand');
-const constants = require('./constants');
 
 class Table {
   constructor(options) {

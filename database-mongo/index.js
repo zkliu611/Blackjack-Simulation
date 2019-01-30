@@ -37,11 +37,11 @@ var saveData = function(data) {
   model.save()
   .then(() => {
     console.log('data saved in db');
-    res.status(201).send();
+    // res.status(201).send();
   })
   .catch(err => {
     console.log(err);
-    res.status(500).send();
+    // res.status(500).send();
   })
 }
 

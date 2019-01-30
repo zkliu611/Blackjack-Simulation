@@ -44,6 +44,8 @@ class App extends React.Component {
     data.startBankroll = Number(this.state.bankroll);
     data.bettingStrategy = this.state.bettingStrategy;
     data.playingStrategy = this.state.playingStrategy;
+    //actual simulator not working yet, ending bankroll generated at random for now. 
+    //FIX ME!!!!!
     if (data.playingStrategy === 'No Strategy') {
       console.log('t')
       data.endBankroll = this.state.bankroll * Math.floor((Math.random()*70+40))/100;
